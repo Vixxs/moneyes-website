@@ -1,18 +1,21 @@
 {
-  "collectionName": "components_elements_features",
+  "collectionName": "components_sections_visions",
   "info": {
-    "displayName": "Feature",
+    "displayName": "Visions",
     "description": ""
   },
   "options": {},
   "attributes": {
-    "title": {
+    "heading": {
       "type": "string"
     },
     "description": {
       "type": "text"
     },
-    "media": {
+    "tag": {
+      "type": "string"
+    },
+    "tagIcon": {
       "type": "media",
       "multiple": false,
       "required": false,
@@ -22,6 +25,11 @@
         "videos",
         "audios"
       ]
+    },
+    "vision": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.vision"
     }
   }
 }

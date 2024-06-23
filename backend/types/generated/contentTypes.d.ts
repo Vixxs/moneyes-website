@@ -953,12 +953,6 @@ export interface ApiGlobalGlobal extends Schema.SingleType {
           localized: true;
         };
       }>;
-    notificationBanner: Attribute.Component<'elements.notification-banner'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     navbar: Attribute.Component<'layout.navbar'> &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -1056,16 +1050,9 @@ export interface ApiPagePage extends Schema.CollectionType {
     contentSections: Attribute.DynamicZone<
       [
         'sections.hero',
-        'sections.bottom-actions',
-        'sections.feature-columns-group',
-        'sections.feature-rows-group',
-        'sections.testimonials-group',
-        'sections.large-video',
-        'sections.rich-text',
-        'sections.pricing',
         'sections.lead-form',
         'sections.features',
-        'sections.heading'
+        'sections.visions'
       ]
     > &
       Attribute.SetPluginOptions<{
@@ -1126,6 +1113,8 @@ export interface ApiProductFeatureProductFeature extends Schema.CollectionType {
   };
   attributes: {
     name: Attribute.String & Attribute.Required;
+    description: Attribute.String;
+    image: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

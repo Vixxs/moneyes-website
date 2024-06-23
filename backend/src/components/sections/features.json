@@ -17,6 +17,20 @@
       "type": "component",
       "repeatable": true,
       "component": "elements.feature"
+    },
+    "tag": {
+      "type": "string"
+    },
+    "tagIcon": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
     }
   }
 }
