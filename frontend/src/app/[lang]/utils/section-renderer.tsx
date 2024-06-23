@@ -4,6 +4,8 @@ import Hero from "../components/Hero";
 import Visions from "../components/Visions";
 
 export function sectionRenderer(section: any, index: number) {
+    console.log(section);
+
     switch (section.__component) {
         case "sections.hero":
             return <Hero key={index} data={section} />;

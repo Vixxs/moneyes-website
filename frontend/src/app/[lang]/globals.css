@@ -135,3 +135,13 @@ body {
 .react-slideshow-container [aria-label="Next Slide"] {
   margin-right: 1rem;
 }
+
+/******************************************* 
+  Home Page Styles
+*******************************************/   
+.bg-gradient-homepage{
+    background-image: url('data:image/svg+xml, <svg viewBox="0 0 2000 842" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 841.5L2000 550.851V0H0V841.5Z" fill="url(%23paint0_radial_397_1329)" /><defs><radialGradient id="paint0_radial_397_1329" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1467.36 461) rotate(-178.247) scale(1242.25 884.138)"><stop stop-color="%234A30DD" /><stop offset="1" stop-color="%231A0826" /></radialGradient></defs></svg>');
+    background-repeat: no-repeat;
+    background-color: white;
+    background-size: cover;
+}

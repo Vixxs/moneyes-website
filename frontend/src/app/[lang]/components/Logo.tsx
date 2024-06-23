@@ -13,7 +13,7 @@ export default function Logo({
             aria-label="Back to homepage"
             className="flex items-center p-2"
         >
-            {src && <img src={src} width={180} alt="logo" />}
+            {src && <img className="w-[130px] lg:w-[180px]" width={150} src={src} alt="logo" />}
             <div className="ml-2">{children}</div>
         </Link>
     );

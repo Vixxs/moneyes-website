@@ -63,7 +63,7 @@ export default async function RootLayout({
     // TODO: CREATE A CUSTOM ERROR PAGE
     if (!global.data) return null;
 
-    const { notificationBanner, navbar, footer } = global.data.attributes;
+    const { navbar, footer } = global.data.attributes;
 
     const navbarLogoUrl = getStrapiMedia(
         navbar.navbarLogo.logoImg.data?.attributes.url
@@ -74,8 +74,8 @@ export default async function RootLayout({
     );
 
     return (
-        <html lang={params.lang}>
-            <body className="-z-20 bg-white">
+        <html lang={params.lang} className="">
+            <body className="bg-white -z-20">
                 <Navbar
                     links={navbar.links}
                     logoUrl={navbarLogoUrl}
