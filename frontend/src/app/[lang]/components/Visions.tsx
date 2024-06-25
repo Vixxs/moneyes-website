@@ -25,7 +25,7 @@ function Vision({ name, description, icon }: Vision) {
         <div className="text-center flex flex-col items-center p-4 ">
             <img src={iconUrl || ""} alt={name} className="w-10 h-10" />
             <h3 className="my-3 text-lg font-bold">{name}</h3>
-            <div className="text-md dark:text-gray-400 leading-tight">
+            <div className="text-md dark:text-gray-400">
                 <p>{description}</p>
             </div>
         </div>
@@ -42,7 +42,7 @@ export default function Visions({ data }: VisionsProps) {
                 <p className="text-md dark:text-gray-400 max-w-[700px]">{data.description}</p>
             </div>
 
-            <div className="max-w-[1200px] flex flex-col lg:flex-row my-6 justify-center  gap-10 lg:gap-32">
+            <div className="max-w-[1200px] flex flex-col lg:flex-row my-10 justify-center  gap-10 lg:gap-32">
                 {data.vision.map((vision: Vision, index: number) => (
                     <Vision key={index} {...vision} />
                 ))}

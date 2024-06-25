@@ -2,6 +2,7 @@ import Link from "next/link";
 import { getStrapiMedia } from "../utils/api-helpers";
 import { renderButtonStyle } from "../utils/render-button-style";
 import HighlightedText from "./HighlightedText";
+import Tag from "./Tag";
 
 interface Button {
     id: string;
@@ -25,6 +26,8 @@ interface Picture {
 interface HeroProps {
     data: {
         id: string;
+        tagIcon: Picture;
+        tag: string;
         title: string;
         description: string;
         picture: Picture;
@@ -34,12 +37,14 @@ interface HeroProps {
 
 export default function Hero({ data }: HeroProps) {
     const imgUrl = getStrapiMedia(data.picture.data.attributes.url);
+    const tagIconUrl = getStrapiMedia(data.tagIcon?.data?.attributes?.url);
     return (
         <>
             <div className="absolute top-0 right-0 left-0 -z-10 bg-gradient-homepage h-[90vh]" />
             <section className="text-white">
-                <div className="container flex flex-col items-center justify-center p-6 mx-auto sm:py-12 lg:py-26 lg:flex-row lg:justify-between max-w-[1200px]">
-                    <div className="flex flex-col justify-center lg:items-start sm:p-6 text-center rounded-lg lg:max-w-md xl:max-w-lg lg:text-left">
+                <div className="container flex flex-col items-center justify-center p-6 mx-auto sm:py-10 lg:py-26 lg:flex-row lg:justify-between max-w-[1200px]">
+                    <div className="flex flex-col justify-center items-center lg:items-start sm:p-6 text-center rounded-lg lg:max-w-md xl:max-w-lg lg:text-left">
+                        <Tag className="mb-6" text={data.tag} iconUrl={tagIconUrl} variant="dark" />
                         <HighlightedText
                             text={data.title}
                             tag="h1"
