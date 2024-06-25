@@ -28,6 +28,19 @@
       "type": "component",
       "repeatable": true,
       "component": "links.button-link"
+    },
+    "tag": {
+      "type": "string"
+    },
+    "tagIcon": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }

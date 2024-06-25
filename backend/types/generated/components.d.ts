@@ -13,6 +13,20 @@ export interface ElementsFeature extends Schema.Component {
   };
 }
 
+export interface ElementsRoadmap extends Schema.Component {
+  collectionName: 'components_elements_roadmaps';
+  info: {
+    displayName: 'Roadmap';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String;
+    description: Attribute.Text;
+    date: Attribute.String;
+    current: Attribute.Boolean;
+  };
+}
+
 export interface ElementsVision extends Schema.Component {
   collectionName: 'components_elements_visions';
   info: {
@@ -172,6 +186,8 @@ export interface SectionsHero extends Schema.Component {
     description: Attribute.String & Attribute.Required;
     picture: Attribute.Media & Attribute.Required;
     buttons: Attribute.Component<'links.button-link', true>;
+    tag: Attribute.String;
+    tagIcon: Attribute.Media;
   };
 }
 
@@ -189,6 +205,21 @@ export interface SectionsLeadForm extends Schema.Component {
     submitButton: Attribute.Component<'links.button'>;
     location: Attribute.String;
     description: Attribute.Text;
+  };
+}
+
+export interface SectionsRoadmaps extends Schema.Component {
+  collectionName: 'components_sections_roadmaps';
+  info: {
+    displayName: 'Roadmaps';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String;
+    description: Attribute.Text;
+    tag: Attribute.String;
+    tagIcon: Attribute.Media;
+    roadmap: Attribute.Component<'elements.roadmap', true>;
   };
 }
 
@@ -287,6 +318,7 @@ declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'elements.feature': ElementsFeature;
+      'elements.roadmap': ElementsRoadmap;
       'elements.vision': ElementsVision;
       'layout.footer': LayoutFooter;
       'layout.logo': LayoutLogo;
@@ -299,6 +331,7 @@ declare module '@strapi/types' {
       'sections.features': SectionsFeatures;
       'sections.hero': SectionsHero;
       'sections.lead-form': SectionsLeadForm;
+      'sections.roadmaps': SectionsRoadmaps;
       'sections.visions': SectionsVisions;
       'shared.media': SharedMedia;
       'shared.quote': SharedQuote;

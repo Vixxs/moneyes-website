@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_sections_roadmaps",
+  "info": {
+    "displayName": "Roadmaps",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "tag": {
+      "type": "string"
+    },
+    "tagIcon": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "roadmap": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.roadmap"
+    }
+  }
+}

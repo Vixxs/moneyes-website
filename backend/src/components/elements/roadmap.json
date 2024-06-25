@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_elements_roadmaps",
+  "info": {
+    "displayName": "Roadmap",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "date": {
+      "type": "string"
+    },
+    "current": {
+      "type": "boolean"
+    }
+  }
+}

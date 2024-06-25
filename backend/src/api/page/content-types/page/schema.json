@@ -31,7 +31,8 @@
         "sections.hero",
         "sections.lead-form",
         "sections.features",
-        "sections.visions"
+        "sections.visions",
+        "sections.roadmaps"
       ],
       "pluginOptions": {
         "i18n": {
