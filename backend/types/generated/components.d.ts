@@ -158,6 +158,24 @@ export interface MetaMetadata extends Schema.Component {
   };
 }
 
+export interface SectionsArticles extends Schema.Component {
+  collectionName: 'components_sections_articles';
+  info: {
+    displayName: 'Articles';
+  };
+  attributes: {
+    articles: Attribute.Relation<
+      'sections.articles',
+      'oneToMany',
+      'api::article.article'
+    >;
+    title: Attribute.String;
+    description: Attribute.Text;
+    tag: Attribute.String;
+    tagIcon: Attribute.Media;
+  };
+}
+
 export interface SectionsFeatures extends Schema.Component {
   collectionName: 'components_layout_features';
   info: {
@@ -328,6 +346,7 @@ declare module '@strapi/types' {
       'links.link': LinksLink;
       'links.social-link': LinksSocialLink;
       'meta.metadata': MetaMetadata;
+      'sections.articles': SectionsArticles;
       'sections.features': SectionsFeatures;
       'sections.hero': SectionsHero;
       'sections.lead-form': SectionsLeadForm;

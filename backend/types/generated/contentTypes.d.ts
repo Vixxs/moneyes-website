@@ -903,6 +903,7 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
       'api::article.article'
     >;
     description: Attribute.Text;
+    icon: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -1053,7 +1054,8 @@ export interface ApiPagePage extends Schema.CollectionType {
         'sections.lead-form',
         'sections.features',
         'sections.visions',
-        'sections.roadmaps'
+        'sections.roadmaps',
+        'sections.articles'
       ]
     > &
       Attribute.SetPluginOptions<{

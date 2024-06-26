@@ -47,7 +47,7 @@ export default function Features({ data }: FeaturesProps) {
                     <p className="text-md dark:text-gray-400 max-w-[700px]">{data.description}</p>
                 </div>
 
-                <div className="flex flex-col my-6 justify-center gap-32">
+                <div className="flex flex-col my-6 justify-center gap-24">
                     {data.feature.map((feature: Feature, index: number) => (
                         <Feature key={index} {...feature} reverse={index % 2 === 0} />
                     ))}

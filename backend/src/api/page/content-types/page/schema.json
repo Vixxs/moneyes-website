@@ -32,7 +32,8 @@
         "sections.lead-form",
         "sections.features",
         "sections.visions",
-        "sections.roadmaps"
+        "sections.roadmaps",
+        "sections.articles"
       ],
       "pluginOptions": {
         "i18n": {

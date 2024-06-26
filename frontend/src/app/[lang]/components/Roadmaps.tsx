@@ -24,9 +24,8 @@ interface Roadmap {
 
 function Roadmap({ title, description, date, side, colored, current }: Roadmap) {
     return (
-        <div className={`relative flex flex-row justify-between gap-8 items-center w-full ${side === 'left' ? "flex-row-reverse pb-[150px] pr-10" : "pt-[150px] pl-10"}`}>
-            <div className={`absolute h-full w-[1px]top-0 ${side === 'left' ? "right-0" : "left-0"} ${colored ? "bg-primary" : "bg-dark-purple bg-opacity-20"}`} />
-            <div className="border rounded-[15px] bg-white bg-opacity-10 border-white border-opacity-20 flex flex-col gap-2 items-start p-6 ">
+        <div className={`last:py-0 relative flex flex-row justify-between gap-8 items-center w-full ${side === 'left' ? "flex-row-reverse lg:pb-[150px] lg:pr-10" : "lg:pt-[150px] lg:pl-10"}`}>
+            <div className="border rounded-[15px] bg-[#31213C] border-white border-opacity-20 flex flex-col gap-2 items-start p-6 ">
                 <div className="flex flex-row justify-between w-full">
                     <h3 className="text-lg font-bold">{title}</h3>
                     <p className="text-md dark:text-gray-400">{date}</p>
@@ -52,8 +51,8 @@ export default function Roadmaps({ data }: RoadmapsProps) {
                 <p className="text-md dark:text-gray-400 max-w-[700px]">{data.description}</p>
             </div>
             <div className="relative my-12">
-                <div className="absolute h-full w-[1px] rounded-full bg-white bg-opacity-20 left-1/2 top-0 transform -translate-x-1/2" />
-                <div className="max-w-[1200px] my-10 justify-center grid grid-cols-1 lg:grid-cols-2">
+                <div className="z-0 absolute h-full w-[1px] rounded-full bg-white bg-opacity-20 left-1/2 top-0 transform -translate-x-1/2" />
+                <div className="relative z-10 gap-24 lg:gap-0 max-w-[1200px] my-10 justify-center grid grid-cols-1 lg:grid-cols-2">
                     {data.roadmap.map((roadmap: Roadmap, index: number) => (
                         <Roadmap key={index} {...roadmap} side={index % 2 === 0 ? 'left' : 'right'} colored={index <= currentRoadmapIndex} />
                     ))}
