@@ -19,11 +19,13 @@ interface Roadmap {
     date: string;
     current: boolean | null;
     side: 'left' | 'right';
+    colored: boolean;
 }
 
-function Roadmap({ title, description, date, current }: Roadmap) {
+function Roadmap({ title, description, date, side, colored, current }: Roadmap) {
     return (
-        <div>
+        <div className={`relative flex flex-row justify-between gap-8 items-center w-full ${side === 'left' ? "flex-row-reverse pb-[150px] pr-10" : "pt-[150px] pl-10"}`}>
+            <div className={`absolute h-full w-[1px]top-0 ${side === 'left' ? "right-0" : "left-0"} ${colored ? "bg-primary" : "bg-dark-purple bg-opacity-20"}`} />
             <div className="border rounded-[15px] bg-white bg-opacity-10 border-white border-opacity-20 flex flex-col gap-2 items-start p-6 ">
                 <div className="flex flex-row justify-between w-full">
                     <h3 className="text-lg font-bold">{title}</h3>
@@ -39,6 +41,9 @@ function Roadmap({ title, description, date, current }: Roadmap) {
 
 export default function Roadmaps({ data }: RoadmapsProps) {
     const tagIconUrl = getStrapiMedia(data.tagIcon.data.attributes.url);
+    const roadmap = data.roadmap;
+    const currentRoadmapIndex = roadmap.findIndex((roadmap) => roadmap.current);
+
     return (
         <section className="text-white mt-24 flex justify-center items-center flex-col relative bg-dark-purple px-6 py-24">
             <div className="flex flex-col items-center justify-center gap-6 text-center">
@@ -48,9 +53,9 @@ export default function Roadmaps({ data }: RoadmapsProps) {
             </div>
             <div className="relative my-12">
                 <div className="absolute h-full w-[1px] rounded-full bg-white bg-opacity-20 left-1/2 top-0 transform -translate-x-1/2" />
-                <div className="max-w-[1200px] my-10 justify-center  gap-10 lg:gap-32 grid grid-cols-1 lg:grid-cols-2">
-                    {data.roadmap.map((vision: Roadmap, index: number) => (
-                        <Roadmap key={index} {...vision} side={index % 2 === 0 ? 'left' : 'right'} />
+                <div className="max-w-[1200px] my-10 justify-center grid grid-cols-1 lg:grid-cols-2">
+                    {data.roadmap.map((roadmap: Roadmap, index: number) => (
+                        <Roadmap key={index} {...roadmap} side={index % 2 === 0 ? 'left' : 'right'} colored={index <= currentRoadmapIndex} />
                     ))}
                 </div>
             </div>
