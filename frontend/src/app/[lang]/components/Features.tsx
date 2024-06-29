@@ -21,7 +21,7 @@ interface Feature {
 }
 
 function Feature({ title, description, media, reverse }: Feature) {
-    const mediaUrl = getStrapiMedia(media.data.attributes.url);
+    const mediaUrl = getStrapiMedia(media.data?.attributes?.url);
     return (
         <div className={`flex flex-col lg:flex-row justify-center max-lg:items-center ${reverse ? "" : "lg:flex-row-reverse"}`}>
             <div className={`flex gap-3 flex-col justify-center max-lg:rounded-t-[15px] max-w-[400px] bg-dark-purple text-white items-start py-8 px-11 ${reverse ? "lg:rounded-l-[15px]" : "lg:rounded-r-[15px]"}`}>
@@ -37,7 +37,7 @@ function Feature({ title, description, media, reverse }: Feature) {
 }
 
 export default function Features({ data }: FeaturesProps) {
-    const tagIconUrl = getStrapiMedia(data.tagIcon.data.attributes.url);
+    const tagIconUrl = getStrapiMedia(data.tagIcon?.data?.attributes?.url);
     return (
         <>
             <section className="bg-white text text-dark-purple p-6 m:py-12 lg:py-24 relative z-20">

@@ -39,7 +39,7 @@ function Roadmap({ title, description, date, side, colored, current }: Roadmap) 
 }
 
 export default function Roadmaps({ data }: RoadmapsProps) {
-    const tagIconUrl = getStrapiMedia(data.tagIcon.data.attributes.url);
+    const tagIconUrl = getStrapiMedia(data.tagIcon?.data?.attributes?.url);
     const roadmap = data.roadmap;
     const currentRoadmapIndex = roadmap.findIndex((roadmap) => roadmap.current);
 

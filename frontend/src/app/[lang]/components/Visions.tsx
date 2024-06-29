@@ -20,7 +20,7 @@ interface Vision {
 }
 
 function Vision({ name, description, icon }: Vision) {
-    const iconUrl = getStrapiMedia(icon.data.attributes.url);
+    const iconUrl = getStrapiMedia(icon.data?.attributes?.url);
     return (
         <div className="text-center flex flex-col items-center p-4 ">
             <img src={iconUrl || ""} alt={name} className="w-10 h-10" />
@@ -33,7 +33,7 @@ function Vision({ name, description, icon }: Vision) {
 }
 
 export default function Visions({ data }: VisionsProps) {
-    const tagIconUrl = getStrapiMedia(data.tagIcon.data.attributes.url);
+    const tagIconUrl = getStrapiMedia(data.tagIcon?.data?.attributes?.url);
     return (
         <section className="mt-24 flex justify-center items-center flex-col relative -z-20 bg-white text text-dark-purple px-6 py-24">
             <div className="flex flex-col items-center justify-center gap-6 text-center">
