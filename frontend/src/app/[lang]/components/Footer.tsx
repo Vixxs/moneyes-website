@@ -28,7 +28,7 @@ function FooterLink({ url, text }: FooterLink) {
         <li className="flex">
             <Link
                 href={url}
-                className={`hover:dark:text-violet-400 ${path === url && "dark:text-violet-400 dark:border-violet-400"
+                className={`text-gray-300 hover:text-gray-200 text-sm font-light ${path === url && "text-gray-400 border-gray-400"
                     }}`}
             >
                 {text}
@@ -42,7 +42,7 @@ function CategoryLink({ attributes }: CategoryLink) {
         <li className="flex">
             <Link
                 href={`/blog/${attributes.slug}`}
-                className="hover:dark:text-violet-400"
+                className="text-gray-300 hover:text-gray-200 font-light"
             >
                 {attributes.name}
             </Link>
@@ -84,12 +84,12 @@ export default function Footer({
     return (
         <footer className="py-6 bg-dark-purple text-white">
             <div className="container px-6 mx-auto space-y-6 divide-y divide-gray-400 md:space-y-12 divide-opacity-50">
-                <div className="grid grid-cols-12">
-                    <div className="flex flex-col gap-6 pb-6 md:pb-0 md:col-span-6">
+                <div className="flex flex-col lg:flex-row justify-between">
+                    <div className="flex flex-row justify-between items-center lg:flex-col gap-6 pb-6 md:pb-0">
                         <Logo src={logoUrl}>
                             {logoText && <h2 className="text-2xl font-bold">{logoText}</h2>}
                         </Logo>
-                        <div className="flex justify-start pt-4 space-x-4 lg:pt-0 lg:col-end-13">
+                        <div className="flex justify-center lg:justify-start space-x-4 lg:pt-0">
                             {socialLinks.map((link: FooterLink) => {
                                 return (
                                     <a
@@ -106,43 +106,48 @@ export default function Footer({
                             })}
                         </div>
                     </div>
+                    <div className="flex flex-wrap items-start flex-row justify-between gap-24">
+                        <div className="text-left p-2">
+                            <p className="pb-2 text-md font-medium">Legal</p>
+                            <ul>
+                                {legalLinks.map((link: FooterLink) => (
+                                    <li className="flex">
+                                        <Link
+                                            href={link.url}
+                                            className=" text-sm font-light text-gray-300 hover:text-gray-200 mr-2"
+                                            key={link.id}
+                                        >
+                                            {link.text}
+                                        </Link>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                        <div className="text-center md:text-left p-2">
+                            <p className="pb-2 text-md font-medium">Categories</p>
+                            <ul>
+                                {categoryLinks.map((link: CategoryLink) => (
+                                    <CategoryLink key={link.id} {...link} />
+                                ))}
+                            </ul>
+                        </div>
 
-                    <div className="col-span-6 text-center md:text-left md:col-span-3">
-                        <p className="pb-1 text-lg font-medium">Categories</p>
-                        <ul>
-                            {categoryLinks.map((link: CategoryLink) => (
-                                <CategoryLink key={link.id} {...link} />
-                            ))}
-                        </ul>
-                    </div>
-
-                    <div className="col-span-6 text-center md:text-left md:col-span-3">
-                        <p className="pb-1 text-lg font-medium">Menu</p>
-                        <ul>
-                            {menuLinks.map((link: FooterLink) => (
-                                <FooterLink key={link.id} {...link} />
-                            ))}
-                        </ul>
+                        <div className="text-center md:text-left p-2">
+                            <p className="pb-2 text-md font-medium">Menu</p>
+                            <ul>
+                                {menuLinks.map((link: FooterLink) => (
+                                    <FooterLink key={link.id} {...link} />
+                                ))}
+                            </ul>
+                        </div>
                     </div>
                 </div>
-                <div className="grid justify-center pt-6 lg:justify-between">
+                <div className="grid text-sm justify-center pt-6 lg:justify-between">
                     <div className="flex">
                         <span className="mr-2">
-                            ©{new Date().getFullYear()} All rights reserved
+                            ©{new Date().getFullYear()} Moneyes All rights reserved
                         </span>
-                        <ul className="flex">
-                            {legalLinks.map((link: FooterLink) => (
-                                <Link
-                                    href={link.url}
-                                    className="text-gray-400 hover:text-gray-300 mr-2"
-                                    key={link.id}
-                                >
-                                    {link.text}
-                                </Link>
-                            ))}
-                        </ul>
                     </div>
-
                 </div>
             </div>
         </footer>
