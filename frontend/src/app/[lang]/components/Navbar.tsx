@@ -61,6 +61,7 @@ export default function Navbar({
     logoUrl: string | null;
     logoText: string | null;
 }) {
+    const path = usePathname();
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const closeMenu = () => {
         setMobileMenuOpen(false);

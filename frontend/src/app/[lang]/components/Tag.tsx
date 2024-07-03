@@ -1,8 +1,9 @@
+import Image from "next/image";
 
 interface Tag {
     className?: string;
     text: string;
-    iconUrl: string | null;
+    iconUrl?: string | null;
     variant?: 'dark' | 'light';
 }
 
@@ -14,7 +15,7 @@ const getTagColor = (variant: Tag['variant']) => {
 export default function Tag({ className, text, iconUrl, variant = 'light' }: Tag) {
     return (
         <p className={`flex flex-row items-center justify-center gap-1  text-md w-fit rounded-full py-2 px-4 border ${getTagColor(variant)} ${className}`}>
-            <img src={iconUrl || ""} alt={text} className="w-5 inline-block mr-2" />
+            <Image src={iconUrl || ""} alt={text} width={20} height={20} className="w-5 inline-block mr-2" />
             {text}
         </p>
     );

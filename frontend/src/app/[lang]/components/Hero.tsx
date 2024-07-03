@@ -36,7 +36,7 @@ interface HeroProps {
 }
 
 export default function Hero({ data }: HeroProps) {
-    const imgUrl = getStrapiMedia(data.picture.data.attributes.url);
+    const imgUrl = getStrapiMedia(data.picture?.data?.attributes?.url);
     const tagIconUrl = getStrapiMedia(data.tagIcon?.data?.attributes?.url);
     return (
         <>
@@ -74,7 +74,7 @@ export default function Hero({ data }: HeroProps) {
                     <img
                         src={imgUrl || ""}
                         alt={
-                            data.picture.data.attributes.alternativeText || "none provided"
+                            data.picture.data?.attributes?.alternativeText || "none provided"
                         }
                         width={271}
                     />

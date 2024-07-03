@@ -108,8 +108,8 @@ export default function Footer({
                     </div>
                     <div className="flex flex-wrap items-start flex-row justify-between gap-24">
                         <div className="text-left p-2">
-                            <p className="pb-2 text-md font-medium">Legal</p>
-                            <ul>
+                            <p className="pb-3 text-md font-medium">Legal</p>
+                            <ul className="flex flex-col gap-1">
                                 {legalLinks.map((link: FooterLink) => (
                                     <li className="flex">
                                         <Link
@@ -124,8 +124,8 @@ export default function Footer({
                             </ul>
                         </div>
                         <div className="text-center md:text-left p-2">
-                            <p className="pb-2 text-md font-medium">Categories</p>
-                            <ul>
+                            <p className="pb-3 text-md font-medium">Categories</p>
+                            <ul className="flex flex-col gap-1">
                                 {categoryLinks.map((link: CategoryLink) => (
                                     <CategoryLink key={link.id} {...link} />
                                 ))}
@@ -133,8 +133,8 @@ export default function Footer({
                         </div>
 
                         <div className="text-center md:text-left p-2">
-                            <p className="pb-2 text-md font-medium">Menu</p>
-                            <ul>
+                            <p className="pb-3 text-md font-medium">Menu</p>
+                            <ul className="flex flex-col gap-1">
                                 {menuLinks.map((link: FooterLink) => (
                                     <FooterLink key={link.id} {...link} />
                                 ))}
@@ -142,12 +142,10 @@ export default function Footer({
                         </div>
                     </div>
                 </div>
-                <div className="grid text-sm justify-center pt-6 lg:justify-between">
-                    <div className="flex">
+                <div className="text-sm pt-6">
                         <span className="mr-2">
                             ©{new Date().getFullYear()} Moneyes All rights reserved
                         </span>
-                    </div>
                 </div>
             </div>
         </footer>

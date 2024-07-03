@@ -75,7 +75,12 @@ export default async function RootLayout({
 
     return (
         <html lang={params.lang} className="">
-            <body className="bg-white -z-20">
+            <head>
+                <link rel="preconnect" href="https://fonts.googleapis.com/" />
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+                <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet" />
+            </head>
+            <body className="bg-dark-purple -z-20">
                 <Navbar
                     links={navbar.links}
                     logoUrl={navbarLogoUrl}

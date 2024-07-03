@@ -1,3 +1,5 @@
+import Tag from "./Tag";
+
 interface PageHeaderProps {
     heading: string,
     text?: string,
@@ -5,9 +7,12 @@ interface PageHeaderProps {
 
 export default function PageHeader({ heading, text }: PageHeaderProps) {
     return (
-        <div className="my-16 w-full text-center">
-            {text && <span className="text-violet-400 font-bold">{text}</span>}
-            <h2 className="text-4xl my-4 lg:text-5xl font-bold font-heading">{heading}</h2>
+        <div className="my-16 w-full flex flex-col justify-center items-center text-center text-white">
+            {text && <Tag variant="dark" text={text} className=" font-bold" iconUrl="/newspaper.png" />}
+            <h2 className="text-4xl my-4 font-bold font-heading">{heading}</h2>
+            <p className="text-md dark:text-gray-400 max-w-[700px]">
+                Moneyes a pour ambition de révolutionner la gestion financière personnelle en offrant des outils simples, intuitifs et puissants. Notre roadmap illustre notre engagement à
+            </p>
         </div>
     );
 }

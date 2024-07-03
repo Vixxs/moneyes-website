@@ -44,7 +44,7 @@ export default function Roadmaps({ data }: RoadmapsProps) {
     const currentRoadmapIndex = roadmap.findIndex((roadmap) => roadmap.current);
 
     return (
-        <section className="text-white mt-24 flex justify-center items-center flex-col relative bg-dark-purple px-6 py-24">
+        <section className="text-white flex justify-center items-center flex-col relative bg-dark-purple px-6 py-24">
             <div className="flex flex-col items-center justify-center gap-6 text-center">
                 <Tag text={data.tag} iconUrl={tagIconUrl} variant="dark" />
                 <h2 className="text-3xl font-bold">{data.title}</h2>
