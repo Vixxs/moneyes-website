@@ -21,7 +21,7 @@ function NavLink({ url, text }: NavLink) {
     const path = usePathname();
 
     return (
-        <li className="flex">
+        <li className="flex last:bg-white last:text-dark-purple rounded-full py-2 px-1 last:font-semibold ">
             <Link
                 href={url}
                 className={`flex items-center mx-4 -mb-1 border-b-2 dark:border-transparent ${path === url && "dark:text-violet-400 dark:border-violet-400"
