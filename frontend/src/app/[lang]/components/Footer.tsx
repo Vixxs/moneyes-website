@@ -106,7 +106,7 @@ export default function Footer({
                             })}
                         </div>
                     </div>
-                    <div className="flex flex-wrap items-start flex-row justify-between gap-24">
+                    <div className="flex flex-wrap items-start flex-row justify-between gap-x-24 gap-y-4">
                         <div className="text-left p-2">
                             <p className="pb-3 text-md font-medium">Legal</p>
                             <ul className="flex flex-col gap-1">
@@ -143,9 +143,9 @@ export default function Footer({
                     </div>
                 </div>
                 <div className="text-sm pt-6">
-                        <span className="mr-2">
-                            ©{new Date().getFullYear()} Moneyes All rights reserved
-                        </span>
+                    <span className="mr-2">
+                        ©{new Date().getFullYear()} Moneyes All rights reserved
+                    </span>
                 </div>
             </div>
         </footer>

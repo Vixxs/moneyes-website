@@ -1,9 +1,9 @@
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 
 interface Tag {
     className?: string;
     text: string;
-    iconUrl?: string | null;
+    iconUrl?: string | null | StaticImageData;
     variant?: 'dark' | 'light';
 }
 

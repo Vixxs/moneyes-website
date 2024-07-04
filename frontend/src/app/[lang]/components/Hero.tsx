@@ -40,9 +40,17 @@ export default function Hero({ data }: HeroProps) {
     const tagIconUrl = getStrapiMedia(data.tagIcon?.data?.attributes?.url);
     return (
         <>
-            <div className="absolute top-0 right-0 left-0 -z-10 bg-gradient-homepage h-[110vh] sm:h-[90vh]" />
-            <section className="text-white">
-                <div className="container flex flex-col items-center justify-center p-6 mx-auto sm:py-10 lg:py-26 lg:flex-row lg:justify-between max-w-[1200px]">
+            <section className="relative text-white min-h-[calc(100vh-96px)] flex justify-center overflow-x-clip overflow-visible">
+                <div className="absolute min-h-[calc(100vh)] bottom-0 w-[200vw] md:w-screen -z-10 mt md:-mt-[96px] md:ml-[50%]" style={
+                    {
+                        background: "radial-gradient(circle, rgba(74,48,221,1) 1%, rgba(255,255,255,0) 60%)",
+                        backgroundPosition: "bottom",
+                        backgroundSize: "cover",
+                        backgroundRepeat: "no-repeat",
+                    }
+                }></div>
+                <div className="flex w-full flex-col items-center justify-center p-6 mx-auto sm:py-10 lg:py-26 lg:flex-row lg:justify-between max-w-[1200px]">
+
                     <div className="flex flex-col justify-center items-center lg:items-start sm:p-6 text-center rounded-lg lg:max-w-md xl:max-w-lg lg:text-left">
                         <Tag className="mb-6" text={data.tag} iconUrl={tagIconUrl} variant="dark" />
                         <HighlightedText
@@ -64,7 +72,7 @@ export default function Hero({ data }: HeroProps) {
                                     key={index}
                                     href={button.url}
                                     target={button.newTab ? "_blank" : "_self"}
-                                    className={renderButtonStyle(button.type)}
+                                    className={`flex justify-center items-center font-semibold ${renderButtonStyle(button.type)}`}
                                 >
                                     {button.text}
                                 </Link>
@@ -78,7 +86,7 @@ export default function Hero({ data }: HeroProps) {
                         }
                         width={271}
                     />
-                </div >
+                </div>
             </section >
         </>
     );

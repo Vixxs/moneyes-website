@@ -35,7 +35,7 @@ function Vision({ name, description, icon }: Vision) {
 export default function Visions({ data }: VisionsProps) {
     const tagIconUrl = getStrapiMedia(data.tagIcon?.data?.attributes?.url);
     return (
-        <section className="mt-24 flex justify-center items-center flex-col relative -z-20 bg-white text text-dark-purple px-6 py-24">
+        <section className="flex justify-center items-center flex-col relative -z-20 bg-white text text-dark-purple px-6 py-24">
             <div className="flex flex-col items-center justify-center gap-6 text-center">
                 <Tag text={data.tag} iconUrl={tagIconUrl} />
                 <h2 className="text-3xl font-bold">{data.heading}</h2>

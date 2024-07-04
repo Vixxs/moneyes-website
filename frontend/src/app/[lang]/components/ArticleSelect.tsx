@@ -40,7 +40,7 @@ export default function ArticleSelect({
 
     return (
         <div className="text-white p-4 rounded-lg min-h-[365px] relative">
-            <h4 className="text-xl font-semibold">Browse By Category</h4>
+            <h4 className="text-xl font-semibold">Catégories</h4>
 
             <div>
                 <div className="flex flex-wrap py-6 space-x-2 dark:border-gray-400">
@@ -64,7 +64,7 @@ export default function ArticleSelect({
                 </div>
 
                 <div className="space-y-2">
-                    <h4 className="text-lg font-semibold">Other Posts You May Like</h4>
+                    <h4 className="text-lg font-semibold">Tous les articles</h4>
                     <ul className="ml-4 space-y-1 list-disc">
                         {articles.map((article: Article) => {
                             return (
@@ -73,8 +73,8 @@ export default function ArticleSelect({
                                         rel="noopener noreferrer"
                                         href={`/blog/${params.category}/${article.attributes.slug}`}
                                         className={`${params.slug === article.attributes.slug &&
-                                            "text-violet-400"
-                                            }  hover:underline hover:text-violet-400 transition-colors duration-200`}
+                                            "text-secondary"
+                                            }  hover:underline hover:text-secondary transition-colors duration-200`}
                                     >
                                         {article.attributes.title}
                                     </Link>
