@@ -51,7 +51,7 @@ export default function PostList({
     children?: React.ReactNode;
 }) {
     return (
-        <section className="container p-6 mx-auto space-y-6 sm:space-y-12">
+        <section className="container mx-auto space-y-6 sm:space-y-12">
             <div className="grid justify-center grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 text-white">
                 {articles.map((article) => {
                     const imageUrl = getStrapiMedia(
@@ -69,17 +69,19 @@ export default function PostList({
                         <Link
                             href={`/blog/${category?.slug}/${article.attributes.slug}`}
                             key={article.id}
-                            className="max-w-sm mx-auto group hover:no-underline focus:no-underline lg:w-[300px] xl:min-w-[375px] rounded-2xl overflow-hidden shadow-lg bg-[#31213C] border border-opacity-10 border-white"
+                            className="max-w-sm w-full mx-auto group hover:no-underline focus:no-underline lg:w-[300px] xl:min-w-[375px] rounded-2xl overflow-hidden shadow-lg bg-[#31213C] border border-opacity-10 border-white hover:border-opacity-30 hover:shadow-xl transition-all duration-200 hover:bg-gradient-to-b from-[#31213C] to-[#3D2C4D]"
                         >
-                            {imageUrl && (
-                                <Image
-                                    alt="presentation"
-                                    width="240"
-                                    height="240"
-                                    className="object-cover w-full h-44 "
-                                    src={imageUrl}
-                                />
-                            )}
+                            <div className=" overflow-clip">
+                                {imageUrl && (
+                                    <Image
+                                        alt="presentation"
+                                        width="240"
+                                        height="240"
+                                        className="object-cover w-full h-44 group-hover:scale-105 transition-transform duration-200"
+                                        src={imageUrl}
+                                    />
+                                )}
+                            </div>
                             <div className="p-6 space-y-6 relative">
                                 <div className="flex flex-col gap-2">
                                     {avatarUrl && (
@@ -91,7 +93,7 @@ export default function PostList({
                                             className="rounded-full h-16 w-16 object-cover absolute -top-8 right-4"
                                         />
                                     )}
-                                    <h3 className="text-2xl font-semibold group-hover:underline group-focus:underline">
+                                    <h3 className="text-2xl font-semibold">
                                         {article.attributes.title}
                                     </h3>
                                     <div className="flex justify-between items-center">

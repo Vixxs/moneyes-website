@@ -67,8 +67,8 @@ export default function Profile() {
     if (isLoading) return <Loader />;
 
     return (
-        <div className="max-w-[1500px]">
-            <PageHeader heading="Articles et médias" text="Nos actus" tagIcon={Newspaper} />
+        <div className="max-w-[1500px] p-6">
+            <PageHeader heading="Articles et médias" text="Nos actus" tagIcon={Newspaper} description="Retrouvez ici tous les articles et médias pour vous aider à mieux comprendre le monde de la finance." />
             <Blog data={data}>
                 {meta!.pagination.start + meta!.pagination.limit <
                     meta!.pagination.total && (

@@ -40,8 +40,8 @@ export default function Hero({ data }: HeroProps) {
     const tagIconUrl = getStrapiMedia(data.tagIcon?.data?.attributes?.url);
     return (
         <>
-            <section className="relative text-white min-h-[calc(100vh-96px)] flex justify-center overflow-x-clip overflow-visible">
-                <div className="absolute min-h-[calc(100vh)] bottom-0 w-[200vw] md:w-screen -z-10 mt md:-mt-[96px] md:ml-[50%]" style={
+            <section className="relative text-white min-h-[calc(100vh-96px)] flex justify-center max-lg:overflow-clip overflow-x-clip">
+                <div className="absolute min-h-[calc(100vh)] top-0 bottom-0 w-[200vw] lg:w-screen -z-10 mt-40 lg:-mt-[96px] lg:ml-[50%] animate-pulse duration-0" style={
                     {
                         background: "radial-gradient(circle, rgba(74,48,221,1) 1%, rgba(255,255,255,0) 60%)",
                         backgroundPosition: "bottom",
@@ -80,6 +80,7 @@ export default function Hero({ data }: HeroProps) {
                         </div>
                     </div>
                     <img
+                        className="-mb-[200px] lg:mb-0"
                         src={imgUrl || ""}
                         alt={
                             data.picture.data?.attributes?.alternativeText || "none provided"

@@ -1,6 +1,7 @@
 import { formatDate, getStrapiMedia } from '@/app/[lang]/utils/api-helpers';
 import { postRenderer } from '@/app/[lang]/utils/post-renderer';
 import Image from 'next/image';
+import Tag from '../components/Tag';
 
 interface Article {
     id: number;
@@ -64,9 +65,7 @@ export default function Post({ data }: { data: Article }) {
                                 className="w-14 h-14 border rounded-full dark:bg-gray-500 dark:border-gray-700"
                             />
                         )}
-                        <p className="text-md dark:text-violet-400">
-                            {author && author.name} • {formatDate(publishedAt)}
-                        </p>
+                        <Tag variant='dark' text={`${author && author.name} • ${formatDate(publishedAt)}`} className="text-md text-primary" />
                     </div>
                 </div>
             </div>

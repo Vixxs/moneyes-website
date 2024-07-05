@@ -42,7 +42,7 @@ export default async function CategoryRoute({ params }: { params: { category: st
 
     return (
         <div>
-            <PageHeader heading={name} text={description} />
+            <PageHeader heading={name} description={description} />
             <BlogList data={data} />
         </div>
     );
